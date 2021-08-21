@@ -28,12 +28,12 @@ class CafeITBrowser : Application() {
                     }
                 }
             })
-            val f = File("/Users/longtran/Documents/phatnhacv2-master/src/main/resources/static/fileupload/presentation/index.html")
-            webEngine?.load(f.toURI().toString())
-//            parameters?.apply {
-//                var path: String = named["path"].toString()
-//
-//            }
+
+            parameters?.apply {
+                var path: String = named["path"].toString()
+                val f = File(path)
+                webEngine?.load(f.toURI().toString())
+            }
 
             val scene = Scene(webView, 960.0,600.0)
             primaryStage.title = "Command browser"
